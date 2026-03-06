@@ -7,137 +7,103 @@
 
 ---
 
-## 📦 项目列表
-
-### 核心项目
-
-| 项目 | 说明 | 状态 | Stars |
-|------|------|------|-------|
-| **[openclaw-guardian](openclaw-guardian)** | 🛡️ 守护技能 - 自动健康检查、配置回滚、服务恢复 | ✅ 最新 | ⭐ |
-| **[openclaw-disaster-recovery](openclaw-disaster-recovery)** | 📦 灾备系统 v2.0 - 完整备份和一键恢复 | ✅ 稳定 | ⭐ |
-| **[openclaw-memory-isolation](openclaw-memory-isolation)** | 🧠 记忆隔离 - 会话历史独立存储 | ✅ 稳定 | ⭐ |
-| **[openclaw-monitor](openclaw-monitor)** | 📊 监控技能 - Gateway 状态监控和告警 | ✅ 稳定 | ⭐ |
-
-### 工具项目
-
-| 项目 | 说明 | 状态 | Stars |
-|------|------|------|-------|
-| **[openclaw](openclaw)** | ⚙️ OpenClaw 配置文件 | ⚠️ 待整理 | ⭐ |
-| **[config-openclaw](config-openclaw)** | ⚙️ OpenClaw 配置备份 | ⚠️ 待整理 | ⭐ |
-| **[monitor-gateway](monitor-gateway)** | 🔍 监控网关 | ⚠️ 待整合 | ⭐ |
-| **[notify-gateway](notify-gateway)** | 📢 通知网关 | ⚠️ 待整合 | ⭐ |
-| **[ai-assistant-tools](ai-assistant-tools)** | 🤖 AI 助手工具集 | ⚠️ 待整理 | ⭐ |
-
----
-
 ## 🚀 快速开始
 
-### 安装 Guardian
+### 1. Guardian（推荐）
 
 ```bash
-# 克隆仓库
 git clone https://github.com/openclaw-AI-make/openclaw-guardian.git
 cd openclaw-guardian
-
-# 配置
 cp notify.conf.example notify.conf
-cp nas.conf.example nas.conf
-nano notify.conf
-nano nas.conf
-
-# 使用
+nano notify.conf  # 填入 Telegram Token
 oc-config-backup    # 备份配置
 oc-backup           # 完整备份
-oc-status           # 查看状态
 ```
 
-### 安装灾备系统
+### 2. Disaster Recovery（可选）
 
 ```bash
 git clone https://github.com/openclaw-AI-make/openclaw-disaster-recovery.git
 cd openclaw-disaster-recovery
+bash backup.sh daily
 ```
 
 ---
 
-## 📊 系统架构
+## 📦 核心技能
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                   OpenClaw Guardian                      │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐     │
-│  │ 健康检查    │  │ 配置备份    │  │ 服务恢复    │     │
-│  │ (每分钟)    │  │ (5 分钟回滚) │  │ (自动重启)  │     │
-│  └─────────────┘  └─────────────┘  └─────────────┘     │
-└─────────────────────────────────────────────────────────┘
-                          ↓
-┌─────────────────────────────────────────────────────────┐
-│              OpenClaw Disaster Recovery                  │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐     │
-│  │ NAS 备份     │  │ 本地备份    │  │ 恢复测试    │     │
-│  │ (每天 3AM)   │  │ (变化时)    │  │ (每月 1 日)   │     │
-│  └─────────────┘  └─────────────┘  └─────────────┘     │
-└─────────────────────────────────────────────────────────┘
-```
+| 技能 | 说明 | 状态 |
+|------|------|------|
+| **[Guardian](openclaw-guardian/)** | 🛡️ 自动健康检查、配置回滚、服务恢复 | ✅ 推荐 |
+| **[Disaster Recovery](openclaw-disaster-recovery/)** | 📦 NAS 备份、完整系统备份、灾难恢复 | ✅ 推荐 |
+| **[Memory Isolation](openclaw-memory-isolation/)** | 🧠 15 类聚焦记忆、智能理解 | ✅ 推荐 |
+| **[CLI](openclaw-cli/)** | 💻 OpenClaw 命令行工具 | ✅ 稳定 |
+| **[Config](openclaw-config/)** | ⚙️ 配置管理技能 | ✅ 稳定 |
 
 ---
 
-## 🔒 安全说明
+## 📚 文档中心
+
+### 核心文档
+
+| 文档 | 说明 |
+|------|------|
+| [configuration.md](docs/configuration.md) | OpenClaw 完整配置参考 |
+| [channels.md](docs/channels.md) | 渠道配置详解 |
+| [tools-skills-hooks.md](docs/tools-skills-hooks.md) | 工具/技能/钩子使用 |
+| [user-understanding.md](docs/user-understanding.md) | 用户习惯理解系统 |
+
+---
+
+## 🔒 隐私安全
 
 **敏感信息处理**：
-
-| 信息 | 处理方式 |
-|------|---------|
-| Telegram Token | 使用占位符 + GitHub Secrets |
-| NAS 密码 | 使用占位符 + GitHub Secrets |
-| 凭证文件 | 加入 .gitignore，不提交 |
-| 日志文件 | 加入 .gitignore，不提交 |
+- Telegram Token → 占位符 + GitHub Secrets
+- NAS 密码 → 占位符 + .private 目录
+- 凭证文件 → .private/credentials/（不提交）
 
 **配置 Secrets**：
-
-在 GitHub 仓库设置中添加：
 ```
 Settings → Secrets and variables → Actions
-
-添加：
-- BOT_TOKEN
-- NAS_PASS
-- GITHUB_TOKEN
+添加：BOT_TOKEN, NAS_PASS, GITHUB_TOKEN
 ```
 
 ---
 
-## 📝 变更日志
+## 📊 仓库状态
 
-### 2026-03-07
-
-- ✅ 创建组织 `openclaw-AI-make`
-- ✅ 转移 8 个 OpenClaw 仓库
-- ✅ 创建 `openclaw-guardian` 仓库
-- ✅ 发布 Guardian v1.0.0
-
----
-
-## 🤝 贡献
-
-欢迎提交 Issue 和 Pull Request！
+| 仓库 | 说明 | 状态 |
+|------|------|------|
+| [openclaw-guardian](openclaw-guardian/) | 守护技能 | ✅ 活跃 |
+| [openclaw-disaster-recovery](openclaw-disaster-recovery/) | 灾备系统 | ✅ 活跃 |
+| [openclaw-memory-isolation](openclaw-memory-isolation/) | 记忆隔离 | ✅ 活跃 |
+| [openclaw-cli](openclaw-cli/) | CLI 工具 | ✅ 稳定 |
+| [openclaw-config](openclaw-config/) | 配置管理 | ✅ 稳定 |
+| ~~openclaw-monitor~~ | 监控（已归档） | ⚠️ 归档 |
+| ~~monitor-gateway~~ | 监控（已归档） | ⚠️ 归档 |
+| ~~config-openclaw~~ | 配置（已归档） | ⚠️ 归档 |
 
 ---
 
-## 📄 许可
+## 🔗 相关资源
 
-MIT License - 详见各仓库 LICENSE 文件
-
----
-
-## 🔗 相关链接
-
-| 链接 | 说明 |
+| 资源 | 链接 |
 |------|------|
-| [OpenClaw 官方](https://openclaw.ai) | OpenClaw 官网 |
-| [文档](https://docs.openclaw.ai) | OpenClaw 文档 |
-| [Discord](https://discord.gg/clawd) | 社区 Discord |
-| [ClaWHub](https://clawhub.com) | 技能市场 |
+| OpenClaw 官方 | https://openclaw.ai |
+| 官方文档 | https://docs.openclaw.ai |
+| Discord 社区 | https://discord.gg/clawd |
+
+---
+
+## 📝 更新日志
+
+### 2026-03-07 - 精简优化
+
+- ✅ 创建组织 openclaw-AI-make
+- ✅ 部署 Guardian 守护系统
+- ✅ 归档重复仓库（3 个）
+- ✅ 同步核心技能（9 个）
+- ✅ 创建文档中心（10 个文档）
 
 ---
 
