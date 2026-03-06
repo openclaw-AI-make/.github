@@ -22,7 +22,7 @@
 |------|------|------|------|
 | **[CLI](#cli)** | 💻 OpenClaw 命令行工具 | ✅ 稳定 | `git clone` |
 | **[Config](#config)** | ⚙️ 配置管理技能 | ✅ 稳定 | `git clone` |
-| **[System Control](#system-control)** | 🎛️ 系统控制（ctl） | ✅ 稳定 | 已内置 |
+| **[System Control](#system-control)** | 🎛️ 系统控制（ctl） | ✅ 已同步 | `git clone` |
 | **[Systemd](#systemd)** | ⚙️ systemd 服务管理 | ✅ 稳定 | 已安装 |
 
 ---
@@ -31,7 +31,7 @@
 
 | 技能 | 说明 | 状态 | 安装 |
 |------|------|------|------|
-| **[SSH Hardening](#ssh-hardening)** | 🔐 SSH 安全加固 | ✅ 稳定 | 已安装 |
+| **[SSH Hardening](#ssh-hardening)** | 🔐 SSH 安全加固 | ✅ 已同步 | `git clone` |
 | **[Clawsec](#clawsec)** | 🔒 安全工具集 | ✅ 稳定 | 已安装 |
 
 ---
@@ -40,9 +40,9 @@
 
 | 技能 | 说明 | 状态 | 安装 |
 |------|------|------|------|
-| **[PDF](#pdf)** | 📄 PDF 处理 | ✅ 稳定 | 已安装 |
-| **[Excel](#xlsx)** | 📊 Excel 处理 | ✅ 稳定 | 已安装 |
-| **[PPT](#powerpoint-automation)** | 📊 PPT 自动化 | ✅ 稳定 | 已安装 |
+| **[PDF](#pdf)** | 📄 PDF 处理 | ✅ 已同步 | `git clone` |
+| **[Excel](#xlsx)** | 📊 Excel 处理 | ✅ 已同步 | `git clone` |
+| **[PPT](#powerpoint-automation)** | 📊 PPT 自动化 | ✅ 已同步 | `git clone` |
 
 ---
 
@@ -61,9 +61,9 @@
 
 | 技能 | 说明 | 状态 | 安装 |
 |------|------|------|------|
-| **[Automation](#automation)** | 🤖 任务自动化 | ✅ 稳定 | 已安装 |
-| **[Workflow Automation](#workflow-automation)** | 📊 工作流自动化 | ✅ 稳定 | 已安装 |
-| **[Email Processor](#email-processor)** | 📧 邮件处理 | ✅ 稳定 | 已安装 |
+| **[Automation](#automation)** | 🤖 任务自动化 | ✅ 已同步 | `git clone` |
+| **[Workflow Automation](#workflow-automation)** | 📊 工作流自动化 | ✅ 已同步 | `git clone` |
+| **[Email Processor](#email-processor)** | 📧 邮件处理 | ✅ 已同步 | `git clone` |
 | **[Web Scraper](#web-scraper)** | 🕸️ 网页爬虫 | ✅ 稳定 | 已安装 |
 
 ---
@@ -206,19 +206,23 @@ cd openclaw-config
 2. **Memory Isolation** - 记忆系统（推荐）
 3. **CLI** - 命令行工具（方便）
 
-### 进阶技能（5 个）
+### 进阶技能（8 个）
 
 1. **Disaster Recovery** - 灾备系统
 2. **Config** - 配置管理
 3. **SSH Hardening** - SSH 加固
 4. **System Control** - 系统控制
-5. **Automation** - 自动化
+5. **Automation** - 任务自动化
+6. **Workflow Automation** - 工作流自动化
+7. **Email Processor** - 邮件处理
+8. **PDF** - PDF 处理
 
 ### 专业技能（按需）
 
-- **开发**：Linux Server Expert, Nginx Optimizer
+- **开发**：Linux Server Expert, Nginx Optimizer, Mobile Developer
 - **办公**：PDF, Excel, PPT
 - **安全**：Clawsec, SSH Hardening
+- **自动化**：Automation, Workflow Automation, Email Processor
 - **媒体**：Screenshot, FAL Image Edit
 
 ---
