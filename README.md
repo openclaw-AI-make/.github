@@ -44,7 +44,15 @@ bash backup.sh daily
 
 ## 📚 文档中心
 
-### 核心文档
+### 快速入门
+
+| 文档 | 说明 |
+|------|------|
+| [quick-start.md](docs/quick-start.md) | 5 分钟快速部署指南 |
+| [skills-index.md](docs/skills-index.md) | 完整技能索引 |
+| [best-practices.md](docs/best-practices.md) | 最佳实践和技巧 |
+
+### 核心参考
 
 | 文档 | 说明 |
 |------|------|
@@ -96,6 +104,14 @@ Settings → Secrets and variables → Actions
 ---
 
 ## 📝 更新日志
+
+### 2026-03-07 - 阶段 2 完成
+
+- ✅ 创建统一文档（quick-start, skills-index, best-practices）
+- ✅ 同步 P0 技能（screenshot, ssh-hardening, system_control）
+- ✅ 更新组织主页
+- ✅ 归档重复仓库（3 个）
+- ✅ 文档中心：13 个核心文档
 
 ### 2026-03-07 - 精简优化
 
